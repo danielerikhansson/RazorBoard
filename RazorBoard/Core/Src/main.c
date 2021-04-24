@@ -107,8 +107,8 @@ uint8_t Channel_Status = 0;
 #define PWR_MGMT_1_REG 0x6B
 #define WHO_AM_I_REG 0x75
 
-#define Voltage_Fully_Charged 25000     // When to consider battery fully charged, if using lithium, don't fully charge, the battery will last longer.
-#define Voltage_Limit_LOW 22000         // When battery is "empty"
+#define Voltage_Fully_Charged 12600     // When to consider battery fully charged, if using lithium, don't fully charge, the battery will last longer.
+#define Voltage_Limit_LOW 10000         // When battery is "empty"
 
 int16_t Accel_X_RAW = 0;
 int16_t Accel_Y_RAW = 0;
