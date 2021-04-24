@@ -847,11 +847,12 @@ void SendInfo()
     sprintf(msg, "Charger Connected: %d\r\n", ChargerConnect);
     Serial_Console(msg);
     sprintf(msg,
-        "IN-> BWF1: %d BWF2: %d\r\nOUT-> BWF1: %d BWF2: %d\r\n",
+        "IN-> BWF1: %d BWF2: %d\r\nOUT-> BWF1: %d BWF2: %d\r\nStart count: %d",
         bwf1_inside,
         bwf2_inside,
         bwf1_outside,
-        bwf2_outside);
+        bwf2_outside,
+        Initial_Start);
     Serial_Console(msg);
     sprintf(msg, "Battery Fully Charged: %d\r\n", Battery_Ready);
     Serial_Console(msg);
@@ -1247,7 +1248,6 @@ void parseCommand_Console(
             if (strcmp(Command, "ENABLE") == 0) {
                 MasterSwitch = 1;
                 Serial_Console("RazorBoard ENABLED. STEP AWAY FROM THE VEHICLE!\r\n");
-                Initial_Start = 0;
                 Initial_Start = 0;
             }
             if (strcmp(Command, "TRACK PERIMETER") == 0) {
